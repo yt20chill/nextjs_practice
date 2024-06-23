@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import './globals.css';
+import './styles/globals.css';
 
 export const metadata: Metadata = {
   title: 'Next js playground',
@@ -13,7 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="bg-red-100">{children}</body>
     </html>
   );
 }
