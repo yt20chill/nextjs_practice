@@ -15,21 +15,24 @@
     "lucide-react": "^0.396.0",
     "next": "^14.2.4",
     "react": "^18",
-    "react-dom": "^18",
-    "tailwind-merge": "^2.3.0",
-    "tailwindcss-animate": "^1.0.7"
+    "react-dom": "^18"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/js": "^9.5.0",
     "@testing-library/react": "^16.0.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@vitejs/plugin-react": "^4.3.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.4",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.2.4",
+    "eslint-config-prettier": "^9.1.0",
     "jsdom": "^24.1.0",
     "postcss": "^8",
+    "tailwind-merge": "^2.3.0",
     "tailwindcss": "^3.4.1",
+    "tailwindcss-animate": "^1.0.7",
     "typescript": "^5",
     "vitest": "^1.6.0"
   }
