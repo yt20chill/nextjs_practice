@@ -12,12 +12,10 @@ import Link from 'next/link';
 
 export default function LoginForm() {
   return (
-    <Card className="mx-auto max-w-sm rounded-lg">
+    <Card className="min-w-96 bg-white rounded-lg">
       <CardHeader>
         <CardTitle className="text-2xl">Login</CardTitle>
-        <CardDescription>
-          Enter your email below to login to your account
-        </CardDescription>
+        <CardDescription></CardDescription>
       </CardHeader>
       <CardContent>
         <div className="grid gap-4">
@@ -46,12 +44,12 @@ export default function LoginForm() {
             Login with Google
           </Button>
         </div>
-        <div className="mt-4 text-center text-sm">
+        {/* <div className="mt-4 text-center text-sm">
           Don&apos;t have an account?{' '}
           <Link href="#" className="underline">
             Sign up
           </Link>
-        </div>
+        </div> */}
       </CardContent>
     </Card>
   );
