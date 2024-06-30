@@ -5,7 +5,10 @@ type Props = { token: string; backgroundColor: string };
 const EncodePills = ({ token, backgroundColor }: Props) => {
   return (
     <span
-      className={twMerge('mb-1 rounded-sm leading-normal', backgroundColor)}
+      className={twMerge(
+        'mb-1 py-1 rounded-sm leading-normal',
+        backgroundColor
+      )}
     >
       {token}
     </span>
