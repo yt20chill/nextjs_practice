@@ -28,9 +28,8 @@ const Encoder = () => {
       <textarea
         className="w-full min-h-96 border-2 border-gray-400 rounded-md p-2"
         onChange={onInputChange}
-      >
-        {input}
-      </textarea>
+        value={input}
+      />
       <span>Result:</span>
       <EncodeResult tokens={tokens} />
       <div className="mt-3 ps-2">Token Count: {tokens.length}</div>
