@@ -12,9 +12,22 @@ const Encoder = () => {
   const debouncedInput = useDebounce(input, 300);
   const [tokens, setTokens] = useState<string[]>([]);
 
+  const onEncodingChange = (encoding: TiktokenEncoding) => {
+    setEncoding(encoding);
+    localStorage.setItem('encoding', encoding);
+  };
+
   const onInputChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setInput(event.target.value);
   };
+
+  // on init
+  useEffect(() => {
+    const savedEncoding = localStorage.getItem('encoding') as TiktokenEncoding;
+    if (savedEncoding && savedEncoding !== encoding) {
+      setEncoding(savedEncoding);
+    }
+  }, []);
 
   useEffect(() => {
     const encoder = getEncoding(encoding);
@@ -24,7 +37,7 @@ const Encoder = () => {
 
   return (
     <div className="flex flex-col p-4 gap-2">
-      <EncodingDropdown value={encoding} onEncodingChange={setEncoding} />
+      <EncodingDropdown value={encoding} onEncodingChange={onEncodingChange} />
       <textarea
         className="w-full min-h-96 border-2 border-gray-400 rounded-md p-2"
         onChange={onInputChange}
