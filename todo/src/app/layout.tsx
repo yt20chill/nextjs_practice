@@ -14,9 +14,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="min-h-dvh">
+      <body className="min-h-dvh min-w-full flex flex-col gap-2">
         <Navbar />
-        <div>{children}</div>
+        <div className="p-4"></div>
+        {children}
       </body>
     </html>
   );
