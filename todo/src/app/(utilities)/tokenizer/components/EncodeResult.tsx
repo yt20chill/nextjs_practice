@@ -17,7 +17,7 @@ export const EncodeResult = ({ tokens }: Props) => {
       {tokens.map((t, i) => (
         <EncodePills
           key={i}
-          token={t}
+          token={t === '\n' ? '\\n' : t}
           backgroundColor={`${
             BACKGROUND_COLOR_CODE[i % BACKGROUND_COLOR_CODE.length]
           }`}
