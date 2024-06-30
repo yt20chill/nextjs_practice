@@ -24,7 +24,7 @@ const Encoder = () => {
 
   return (
     <div className="flex flex-col p-4 gap-2">
-      <EncodingDropdown onEncodingChange={setEncoding} />
+      <EncodingDropdown value={encoding} onEncodingChange={setEncoding} />
       <textarea
         className="w-full min-h-96 border-2 border-gray-400 rounded-md p-2"
         onChange={onInputChange}

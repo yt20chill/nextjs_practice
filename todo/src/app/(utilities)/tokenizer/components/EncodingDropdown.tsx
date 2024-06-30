@@ -2,16 +2,14 @@
 
 import { modelMap } from '@/services/encoder';
 import { TiktokenEncoding } from 'js-tiktoken';
-import { useState } from 'react';
-
-type Encoding = TiktokenEncoding;
 
 type Props = {
-  onEncodingChange: (encoding: Encoding) => void;
+  value: TiktokenEncoding;
+  onEncodingChange: (encoding: TiktokenEncoding) => void;
 };
 
-function EncodingDropdown({ onEncodingChange }: Props) {
-  const encodingOptions: Encoding[] = [
+function EncodingDropdown({ value, onEncodingChange }: Props) {
+  const encodingOptions: TiktokenEncoding[] = [
     'o200k_base',
     'cl100k_base',
     'p50k_base',
@@ -20,11 +18,9 @@ function EncodingDropdown({ onEncodingChange }: Props) {
     'gpt2',
   ] as const;
   const encodingMap = modelMap;
-  const [encoding, setEncoding] = useState<Encoding>('o200k_base');
 
   const onChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const selectedEncoding = event.target.value as Encoding;
-    setEncoding(selectedEncoding);
+    const selectedEncoding = event.target.value as TiktokenEncoding;
     onEncodingChange(selectedEncoding);
   };
 
@@ -35,7 +31,7 @@ function EncodingDropdown({ onEncodingChange }: Props) {
         <select
           className="border-solid border-2 border-blue-400 rounded-md px-2 py-1"
           id="encoding-select"
-          value={encoding}
+          value={value}
           onChange={onChange}
         >
           {encodingOptions.map((option) => (
