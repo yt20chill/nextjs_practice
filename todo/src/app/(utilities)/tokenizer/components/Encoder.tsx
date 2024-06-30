@@ -7,6 +7,7 @@ import EncodeResult from './EncodeResult';
 import EncodingDropdown from './EncodingDropdown';
 
 const Encoder = () => {
+  const ENCODING_KEY = 'encoding';
   const [encoding, setEncoding] = useState<TiktokenEncoding>('o200k_base');
   const [input, setInput] = useState('');
   const debouncedInput = useDebounce(input, 300);
@@ -14,7 +15,7 @@ const Encoder = () => {
 
   const onEncodingChange = (encoding: TiktokenEncoding) => {
     setEncoding(encoding);
-    localStorage.setItem('encoding', encoding);
+    localStorage.setItem(ENCODING_KEY, encoding);
   };
 
   const onInputChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -23,7 +24,9 @@ const Encoder = () => {
 
   // on init
   useEffect(() => {
-    const savedEncoding = localStorage.getItem('encoding') as TiktokenEncoding;
+    const savedEncoding = localStorage.getItem(
+      ENCODING_KEY
+    ) as TiktokenEncoding;
     if (savedEncoding && savedEncoding !== encoding) {
       setEncoding(savedEncoding);
     }
