@@ -1,8 +1,8 @@
 'use client';
 
+import { useDebounce } from '@/hooks/useDebounce';
 import { TiktokenEncoding, getEncoding } from 'js-tiktoken';
 import { useEffect, useState } from 'react';
-import { useDebounce } from '../../hooks/useDebounce';
 import EncodeResult from './EncodeResult';
 import EncodingDropdown from './EncodingDropdown';
 

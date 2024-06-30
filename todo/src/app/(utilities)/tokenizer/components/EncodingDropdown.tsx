@@ -1,8 +1,8 @@
 'use client';
 
+import { modelMap } from '@/services/encoder';
 import { TiktokenEncoding } from 'js-tiktoken';
 import { useState } from 'react';
-import { modelMap } from '../../services/encoder';
 
 type Encoding = TiktokenEncoding;
 
